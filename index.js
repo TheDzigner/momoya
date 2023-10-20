@@ -55,3 +55,15 @@ openMenu.addEventListener('click', () => {
 });
 
 
+// remove the preloader when DOM content has loaded 
+
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    preloader.classList.add('ended');
+    setTimeout(() => {
+        preloader.remove();
+    }, 3000);
+});
+
+
+
