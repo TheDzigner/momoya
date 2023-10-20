@@ -1,11 +1,35 @@
 const openMenu = document.querySelector('.open-menu-btn');
 const nav = document.querySelector('header nav');
-
 const navBtns = nav.querySelectorAll('ul li');
+
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const slides = document.querySelectorAll('.slider .slide');
+const slidesLenght = slides.length -1
+
+let index = 0
+
+
+
+
+nextBtn.addEventListener('click', () => {
+    slides[index].classList.remove('active')
+    index < slidesLenght ? index++ : index = 0
+    slides[index].classList.add('active')
+
+})
+
+prevBtn.addEventListener('click', () => {
+    slides[index].classList.remove('active');
+    index > 0 ? index-- : index = slidesLenght
+    slides[index].classList.add('active');
+})
+
+
+
 
 let Activeindex = 0
 
-// add active class when cliked a nav link 
 
 navBtns.forEach((btn,index) => {
     
@@ -29,3 +53,5 @@ openMenu.addEventListener('click', () => {
     } 
   
 });
+
+

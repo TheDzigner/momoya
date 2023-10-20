@@ -145,7 +145,7 @@ header nav ul li a {
 
 
 .banner {
-  margin: 30% auto 0;
+  margin: 20% auto 0;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -156,7 +156,13 @@ header nav ul li a {
 .banner h1 {
   font-size: 5rem;
   text-transform: uppercase;
+  /* display: block; */
+  position: relative;
+  animation: animeTitle .2s alternate;
 }
+
+
+
 
 .banner span {
   text-transform: uppercase;
@@ -197,6 +203,10 @@ header nav ul li a {
   padding: 0.3em;
 }
 
+.slider .navigation_btns button:active {
+  transform: scale(.9);
+}
+
 .slider .navigation_btns button svg {
   fill: #ffffff;
 }
@@ -207,10 +217,12 @@ header nav ul li a {
   display: flex;
   justify-content: left;
   align-items: center;
-  /* position: absolute; */
+  position: absolute;
   padding: 1em;
   opacity: 0;
   background-color: #e1e7e0;
+  transition: all .2s ease-in-out;
+
 }
 @media only screen and (max-width : 600px) {
     .slider .slide {
@@ -224,6 +236,7 @@ header nav ul li a {
 
 .slider .slide.active {
   opacity: 1;
+  transition: all .2s ease-in-out;
 }
 
 .slider .slide .content_img {
@@ -358,8 +371,7 @@ header nav ul li a {
 
 .product_container .product .product_details h2 {
   max-width: 65%;
-  text-align-last: center;
-  text-align: center;
+  text-align: left;
   word-break: normal;
   font-size: 3rem;
   text-transform: uppercase;
